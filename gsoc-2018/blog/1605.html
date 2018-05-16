@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>16/05/18 - GSoC- Scilab</title>
+    <meta name="description" content="16 May GSoC blog."/>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700,200" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" rel="stylesheet">
+    <link href="https://dvkcool.github.io/css/aos.css" rel="stylesheet">
+    <link href="https://dvkcool.github.io/css/accordion.css" rel="stylesheet">
+    <link href="https://dvkcool.github.io/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://dvkcool.github.io/styles/main.css" rel="stylesheet">
+  </head>
+  <body id="top">
+    <header>
+      <div class="profile-page sidebar-collapse">
+        <nav class="navbar navbar-expand-lg fixed-top  bg-primary" color-on-scroll="400">
+          <div class="container">
+            <div class="navbar-translate"><a class="navbar-brand" href="http://dvkcool.github.io/gsoc-2018/blog/index.html" rel="tooltip"> < Return to Blog Index </a>
+              <button class="navbar-toggler navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation" aria-controls="navigation" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-bar bar1"></span><span class="navbar-toggler-bar bar2"></span><span class="navbar-toggler-bar bar3"></span></button>
+            </div>
+            <div class="collapse navbar-collapse justify-content-end" id="navigation">
+              <ul class="navbar-nav">
+                <li class="nav-item"><a class="nav-link smooth-scroll" href="https://dvkcool.github.io#about">About</a></li>
+                <li class="nav-item"><a class="nav-link smooth-scroll" href="https://dvkcool.github.io#skill">Skills</a></li>
+                <li class="nav-item"><a class="nav-link smooth-scroll" href="https://dvkcool.github.io#projects">Projects</a></li>
+                <li class="nav-item"><a class="nav-link smooth-scroll" href="https://dvkcool.github.io#experience">Experience</a></li>
+                <li class="nav-item"><a class="nav-link smooth-scroll" href="https://dvkcool.github.io/gsoc-2018/blog/index.html">Blog</a></li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+      </div>
+    </header>
+    <div class="page-content">
+      <div class="section" id="blog">
+        <div class="container">
+          <h1> Experience Speaks</h1>
+           I was hoping that the script was good enough, but my mentor(Mr. Paul Bignier - paro) took almost no time and pointed out
+          the mistakes in it by taking a mere look at it. It is correctly said experience does matters, he told me a following points which I missed and should have
+          considered.
+          <ol>
+            <li> I didn't include any code to check for installation errors, which almost made my script useless.</li>
+            <li> I was using a Mac OS High Sierra (10.13.4) so I was installing latest versions of various packages<br>
+              But he pointed out that what about people using previous versions of Mac, those packages were not supported in earlier versions<br>
+              Again making my script useless<br>
+              <img src="https://dvkcool.github.io/images/1605-1.jpeg">
+            </li>
+          </ol>
+
+          <br>
+          <br>
+          <h3> My solutions </h3>
+          I started working on a new script in which I assumed that fink is installed, which can be found <a href="https://github.com/dvkcool/scilab-work/Script/packageinst.sh"> here</a>
+          <br>
+          I did this to help me save time for checking for fink and its dependencies each time.
+          <br> I decided I will work on a specific part, debug it and then place it abck in the original script.
+          <br>
+          The new script did include following points
+          <br>
+          <ol>
+            <li> It did include the code to check for errors and it gives following output when all packages are installed with a Congratulations message:
+              <br> <img src="https://dvkcool.github.io/images/1605-2.jpeg">
+              <br><br> And a message for failed installed packages with a message to install them manually.<br>
+              <img src="https://dvkcool.github.io/images/1605-3.jpeg">
+            </li>
+            <li> Also I did remove the versions from fink install, as fink will automatically choose the best suited version for any Mac OS.
+            </li>
+          </ol>
+          The script seems to work fine now, but again I have asked my mentors, let see if I missed something again.
+          <br><br>
+          <h3> Lesson Learnt </h3>
+          <ol>
+          <li> Never believe the work is very easy</li>
+          <li> Always think for corner cases, think loop holes in your code.</li>
+          <li> Do consider taking opinion from others, because sometimes you may feel its perfect but it might not necessary be the case.</li>
+        </ol>
+          Hoping for Best.<br>
+          Happily Coding<br>
+          Divyanshu Kumar
+      </div>
+    </div>
+  </div>
+<footer class="footer">
+  <div class="container text-center"><a class="cc-facebook btn btn-link" href="https://www.facebook.com/divya.kuaa"><i class="fa fa-facebook fa-2x " aria-hidden="true"></i></a><a class="cc-twitter btn btn-link " href="https://www.twitter.com/DVK_cool"><i class="fa fa-twitter fa-2x " aria-hidden="true"></i></a><a class="cc-google-plus btn btn-link" href="https://plus.google.com/u/0/103776491639610497035"><i class="fa fa-google-plus fa-2x" aria-hidden="true"></i></a></div>
+  <div class="h4 title text-center">Divyanshu Kumar</div>
+  <div class="text-center text-muted">
+    <p>NIT Raipur</p>
+  </div>
+</footer>
+</html>
