@@ -41,17 +41,33 @@
           From 2 days I am stuck on an compilation issue, I was supposed to be working on a script that can compile Scilab.
           <br>
           But instead I am unable to compile Scilab manually even, which is kind of funny.<br>
+          <br>
           <h3> Issue which I am facing </h3>
           <ul>
             <li> Exception in thread "main" java.lang.UnsatisfiedLinkError: no gluegen2-rt in java.library.path </li>
             <li> If I place the libgluegen2-rt.jnilib in the jre/lib folder of the jdk I get following error <br>
-              Exception in thread "main" java.lang.UnsatisfiedLinkError: Can't load library: /System/Library/Frameworks/nativewindow_awt.Framework/nativewindow_awt
+              <b>Exception in thread "main" java.lang.UnsatisfiedLinkError: Can't load library: /System/Library/Frameworks/nativewindow_awt.Framework/nativewindow_awt</b>
             </li>
           </ul>
           <br> I did face the same issue earlier but Mr. Clement David (davidcl) helped me sort this out. At first he told all dependencies were not installed,
           <br> but it was not the case, then he suggested to place the libgluegen2-rt.jnilib file from scilab/lib/thirdparty to /jre/lib of the jdk and surprisingly it worked that time.
           <br> But it is not working now, I did post a question on Stack Overflow that time (around GSoC proposal- about 2 months earlier) which can be found <a href="https://stackoverflow.com/questions/49108116/could-not-create-a-scilab-main-class-error-while-compiling-scilab-6-0-on-mac-os"> here </a>
           <br> Still fighting with this issue, lets hope that I can sort it out.
+
+          <br><br>
+          <h3> My trials </h3>
+          <ol>
+            <li> I tried removing my jdk8 and installing jdk10, but no use </li>
+            <li> I again downloaded a fresh installation of jdk8 build 171, but resulted in no gluegen2-rt </li>
+            <li> I tried to copy paste the libgluegen2-rt.jnilib from thirdparty lib folder of Scilab but it results in following error: <br>
+              <b>Exception in thread "main" java.lang.UnsatisfiedLinkError: Can't load library: /System/Library/Frameworks/nativewindow_awt.Framework/nativewindow_awt</b><br>
+            </li>
+            <li> I downloaded a file jogamp-all-platforms and placed all jnlib files from it to the lib folder of jdk <br>
+              I did this because after lots of google search the gluegen-rt took me to jogl, so thought it might solve the issue.
+              <br>
+              But it resulted in another error: <br><b>Exception in thread "main" java.lang.UnsatisfiedLinkError: jogamp.common.os.MachineDescriptionRuntime.getPointerSizeInBytesImpl()I</b><br>
+            </li>
+          </ol>
            <br>
           Hoping for Best.<br>
           Happily Coding<br>
