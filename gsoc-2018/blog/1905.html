@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>16/05/18 - GSoC- Scilab</title>
+    <meta name="description" content="16 May GSoC blog."/>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700,200" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" rel="stylesheet">
+    <link href="https://dvkcool.github.io/css/aos.css" rel="stylesheet">
+    <link href="https://dvkcool.github.io/css/accordion.css" rel="stylesheet">
+    <link href="https://dvkcool.github.io/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://dvkcool.github.io/styles/main.css" rel="stylesheet">
+  </head>
+  <body id="top">
+    <header>
+      <div class="profile-page sidebar-collapse">
+        <nav class="navbar navbar-expand-lg fixed-top  bg-primary" color-on-scroll="400">
+          <div class="container">
+            <div class="navbar-translate"><a class="navbar-brand" href="http://dvkcool.github.io/gsoc-2018/blog/index.html" rel="tooltip"> < Return to Blog Index </a>
+              <button class="navbar-toggler navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation" aria-controls="navigation" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-bar bar1"></span><span class="navbar-toggler-bar bar2"></span><span class="navbar-toggler-bar bar3"></span></button>
+            </div>
+            <div class="collapse navbar-collapse justify-content-end" id="navigation">
+              <ul class="navbar-nav">
+                <li class="nav-item"><a class="nav-link smooth-scroll" href="https://dvkcool.github.io#about">About</a></li>
+                <li class="nav-item"><a class="nav-link smooth-scroll" href="https://dvkcool.github.io#skill">Skills</a></li>
+                <li class="nav-item"><a class="nav-link smooth-scroll" href="https://dvkcool.github.io#projects">Projects</a></li>
+                <li class="nav-item"><a class="nav-link smooth-scroll" href="https://dvkcool.github.io#experience">Experience</a></li>
+                <li class="nav-item"><a class="nav-link smooth-scroll" href="https://dvkcool.github.io/gsoc-2018/blog/index.html">Blog</a></li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+      </div>
+    </header>
+    <div class="page-content">
+      <div class="section" id="blog">
+        <div class="container">
+          <h1> Mac can be choosy</h1>
+          From 2 days I am stuck on an compilation issue, I was supposed to be working on a script that can compile Scilab.
+          <br>
+          But instead I am unable to compile Scilab manually even, which is kind of funny.<br>
+          <h3> Issue which I am facing </h3>
+          <ul>
+            <li> Exception in thread "main" java.lang.UnsatisfiedLinkError: no gluegen2-rt in java.library.path </li>
+            <li> If I place the libgluegen2-rt.jnilib in the jre/lib folder of the jdk I get following error <br>
+              Exception in thread "main" java.lang.UnsatisfiedLinkError: Can't load library: /System/Library/Frameworks/nativewindow_awt.Framework/nativewindow_awt
+            </li>
+          </ul>
+          <br> I did face the same issue earlier but Mr. Clement David (davidcl) helped me sort this out. At first he told all dependencies were not installed,
+          <br> but it was not the case, then he suggested to place the libgluegen2-rt.jnilib file from scilab/lib/thirdparty to /jre/lib of the jdk and surprisingly it worked that time.
+          <br> But it is not working now, I did post a question on Stack Overflow that time (around GSoC proposal- about 2 months earlier) which can be found <a href="https://stackoverflow.com/questions/49108116/could-not-create-a-scilab-main-class-error-while-compiling-scilab-6-0-on-mac-os"> here </a>
+          <br> Still fighting with this issue, lets hope that I can sort it out.
+           <br>
+          Hoping for Best.<br>
+          Happily Coding<br>
+          Divyanshu Kumar
+      </div>
+    </div>
+  </div>
+<footer class="footer">
+  <div class="container text-center"><a class="cc-facebook btn btn-link" href="https://www.facebook.com/divya.kuaa"><i class="fa fa-facebook fa-2x " aria-hidden="true"></i></a><a class="cc-twitter btn btn-link " href="https://www.twitter.com/DVK_cool"><i class="fa fa-twitter fa-2x " aria-hidden="true"></i></a><a class="cc-google-plus btn btn-link" href="https://plus.google.com/u/0/103776491639610497035"><i class="fa fa-google-plus fa-2x" aria-hidden="true"></i></a></div>
+  <div class="h4 title text-center">Divyanshu Kumar</div>
+  <div class="text-center text-muted">
+    <p>NIT Raipur</p>
+  </div>
+</footer>
+</html>
