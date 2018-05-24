@@ -46,14 +46,16 @@
           <div id="doubts">
             <h3> Doubts </h3>
             <ol>
-              <li> How to check the integrity of downloaded git repository of Scilab
-                <br> What I mean is that if someone breaks the git clone process then the compilation will fail for sure.
-                <br> I am guessing some file checksum to verify it, but I don't think something like that is present now,
-                <br> Any other alternatives to check this is highly appreciated.
-              </li>
+              <li> JDK 10 won't work with Scilab compilation, because compilation of Scilab requires javah which has been discontinued, and instead javac with -h is suggested, so how to change the build process,
+                  Its not difficult to replace `javah` with `javac -h`, but I wasn't able to figure out where, if someone could help me with which modules should I change, it could be great help.</li>
 
-              <li> Also in my last post I mentioned about jdk error, so will it be OK if I apply the same solution i.e. <b> copying the thirdparty lib from scilab to jdk </b>
-              </li>
+              <li> Also the LD_LIBRARY_PATH  doesn't work well in Mac, so I did copy all the third party to lib folder of jdk it did solve the requirement, also I did include this in my script, (line 445- 455 in scilabDependenciesInstallerAndCompiler.sh)<br>
+                So is it ok if I do so, I mean what if user requires the third party libs for the softwares and downloads<br>
+                However the downloaded lib files don't work well with Scilab compilation in Mac.<br>
+                (More details can be found on my blog, especially here <a href="https://dvkcool.github.io/gsoc-2018/blog/1905.html"> here </a>)</li>
+
+              <li> How to check for integrity of git clone, I can think of an alternative of md5 checksum check, but if anyone else could suggest an easier alternative, it would highly appreciated.</li>
+
             </ol>
             Lets hope these get solved too.
           </div>
