@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>21/05/18 - GSoC- Scilab</title>
-    <meta name="description" content="21 May GSoC blog."/>
+    <title>24/05/18 - GSoC- Scilab</title>
+    <meta name="description" content="24 May GSoC blog."/>
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700,200" rel="stylesheet">
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" rel="stylesheet">
     <link href="https://dvkcool.github.io/css/aos.css" rel="stylesheet">
@@ -37,15 +37,14 @@
     <div class="page-content">
       <div class="section" id="blog">
         <div class="container">
-          <h1> New Mission - Compiling Scilab</h1>
-          Again I will be working on a smaller script which can compile Scilab which can be found <a href="https://github.com/dvkcool/scilab-work/blob/master/Script/scilabCompiler.sh"> here </a>
+          <h1> Putting everything together</h1>
+          Finally after a lot of testing I did put everything here <a href="https://github.com/dvkcool/scilab-work/blob/master/Script/scilabDependenciesInstallerAndCompiler.sh"> here </a>
           <br>
-          Once it successfully compiles and run, I will merge it in the main script which can then download all dependencies, install them and finally download and compile Scilab.
+          But still doubts remain the same, I have asked the same on mailing list, I guess the IRC communication was miscommunicated.
           <br>
 
           <div id="doubts">
-            <h3> Doubts / Targets to solve </h3>
-            I have many doubts regarding this, because there are many cases possible. But still a few persistent ones are:
+            <h3> Doubts </h3>
             <ol>
               <li> How to check the integrity of downloaded git repository of Scilab
                 <br> What I mean is that if someone breaks the git clone process then the compilation will fail for sure.
@@ -55,10 +54,8 @@
 
               <li> Also in my last post I mentioned about jdk error, so will it be OK if I apply the same solution i.e. <b> copying the thirdparty lib from scilab to jdk </b>
               </li>
-              <li> A check for branches should also be done, I mean if a user enters an invalid branch. </li>
-              <li> Lastly, I must include options for user to add more arguements while run time.</li>
             </ol>
-            Let's hope to solve all these doubts and get it working.
+            Lets hope these get solved too.
           </div>
 
 
