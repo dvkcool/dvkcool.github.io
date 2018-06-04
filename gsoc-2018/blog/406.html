@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>3/06/18 - GSoC- Scilab</title>
-    <meta name="description" content="3 June GSoC blog."/>
+    <title>4/06/18 - GSoC- Scilab</title>
+    <meta name="description" content="4 June GSoC blog."/>
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700,200" rel="stylesheet">
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" rel="stylesheet">
     <link href="https://dvkcool.github.io/css/aos.css" rel="stylesheet">
@@ -37,28 +37,18 @@
     <div class="page-content">
       <div class="section" id="blog">
         <div class="container">
-          <h1> Failing after so many tries </h1>
-          I tried to put everything together for the compilation with jdk10 but it fails.
+          <h1> A complete list of steps I followed </h1>
+          <ol>
+            <li> Removed javah detection from m4/java.m4<br>
+              <ol> <li> Then ran the autoreconf command to generate the new libs. </li>
+                <li> Tried to compile scilab with my script, by just running sudo sh scilabcompiler.sh ( Nothing special, just the compilation process in one line) </li>
+              </ol>
+              <br> Error: </br>
+              <img src="https://dvkcool.github.io/images/406-1.jpeg">
+              <br> Full error log could be found : <a href="https://github.com/dvkcool/scilab-work/blob/master/outputs/configlog1.log"> https://github.com/dvkcool/scilab-work/blob/master/outputs/configlog1.log </a>
+              
+
           <br>
-          Now I a stuck with a class not found exception
-        </br> However, I found an interesting mail in the mailing list which had issues running it with jdk9, <br>
-        which can be found <a href="http://mailinglists.scilab.org/Scilab-GUI-and-adv-cli-fail-to-launch-with-java-9-td4037645.html"> here </a>
-        <br> I tried the hacks mentioned there, but it will definetly break with a new version and moreover its not appropriate too.
-        <h3> Bug report </h3><br><br>
-        Apparently there is already a bug report on this, I have a facing same issue comment too. Lets see.
-        <br> The bug report can be found here: <a href="http://bugzilla.scilab.org/show_bug.cgi?id=15328"> http://bugzilla.scilab.org/show_bug.cgi?id=15328</a>
-        <br> However I feel it may not be much required though, because most of the applications still work well only with jdk8,<br>
-        Like the gradle build for mobile applications, and many more, so I do feel like jdk8 is fine too.
-          <br>
-        <h3> Script fix for DYLD_LIBRARY_PATH </h3>
-        <br><br>
-        I did fix the my script for DYLD_LIBRARY_PATH and it works well too.
-        <br> Lets see what happens.
-        <br>
-
-
-
-
           Hoping for Best.<br>
           Happily Coding<br>
           Divyanshu Kumar
