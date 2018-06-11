@@ -1,0 +1,6 @@
+final List < List<? >> data = model.getDataVector();
+
+/* Inverting data */
+List<?> tmp = data.get(row2);
+data.set(row2, data.get(row1));
+data.set(row1, tmp);
