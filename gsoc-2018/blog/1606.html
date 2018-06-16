@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>10/06/18 - GSoC- Scilab</title>
-    <meta name="description" content="10 June GSoC blog."/>
+    <title>16/06/18 - GSoC- Scilab</title>
+    <meta name="description" content="16 June GSoC blog."/>
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700,200" rel="stylesheet">
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" rel="stylesheet">
     <link href="https://dvkcool.github.io/css/aos.css" rel="stylesheet">
@@ -37,37 +37,40 @@
     <div class="page-content">
       <div class="section" id="blog">
         <div class="container">
-          <h1>Making all changes for fixing the build</h1>
+            <h1> Starting with a new task - Bundling jdk with Scilab and manual signing of Application </h1>
             <br>
-            Many things have changed, so I will just list them for a cleaner reference later.
+            <h3> New Starting </h3> <br>
+            I am so happy that I passed the first evaluation. The moment I recieved the mail, it filled me with a huge amount of energy and enthusiasm.<br>
+            I will work with all my efforts to get things aligned perfectly, lets have a look at a few things. <br>
+            <br><h3> List of challenges for this task </h3>
             <ol>
-              <li>
-                <b>Error:</b><br>
-                scilab/scilab/modules/xcos/src/java/org/scilab/modules/xcos/BrowserView.java:260: error: incompatible types: Enumeration&ltTreeNode&gt cannot be converted to Enumeration&ltDefaultMutableTreeNode&gt<br>
-                  <B> Fix: </B><br>
-                 Enumeration &ltDefaultMutableTreeNode&gt e = (Enumeration &ltDefaultMutableTreeNode&gt )(Object) root.depthFirstEnumeration() in place of Enumeration &ltDefaultMutableTreeNode&gt e = root.depthFirstEnumeration()
-              <br> First typecasting it into an object then into an Enumeration of DefaultMutableTreeNode, seems to get it fixed.</li>
-              <li>
-                <b>Error: </B><br>
-                  scilab/scilab/modules/xcos/src/java/org/scilab/modules/xcos/block/actions/SuperblockMaskCustomizeAction.java:758: error: incompatible types: Vector&ltVector&gt cannot be converted to List&ltList&lt?&gt&gt
-                  <bR><b>Fix: </b> <br>
-                    final List&lt?&gt data = model.getDataVector();
-                    <br>
-                      List&lt?&gt tmp2 = (List&lt?&gt) data.get(row2);<br>
-                      List&lt?&gt tmp1 = (List&lt?&gt) data.get(row1);<br>
-                      data.set(row2, tmp1);<br>
-                      data.set(row1, tmp2);<br>
-                      <u>in place of </u><br>
-                      final List &lt List&lt? &gt&gt data = model.getDataVector();<br>
-                      List&lt?&gt tmp = data.get(row2);<br>
-                      data.set(row2, data.get(row1));<br>
-                      data.set(row1, tmp);<br>
-                      
-
+              <li> Even after jdk8, scilab app shows error that the legacy JAVA SE 6 is required to open this application<br>
+                <img src="https://dvkcool.github.io/images/1606-1.png"></li>
+                <li> Then bundling jdk with Scilab app. </li>
+                <li> Then finally signing of the app.</li>
+              </ol>
+              <br>
+              <br>
+              <b> Let's take one step at a time to fix the issues. </b>
+              <ol>
+                <li> The JAVA SE 6 issue: <br>
+                  <b> FIX: </b> Replacing following lines in Info.plist of jdk to be bundled with solves the issue, and the app works well even if JAVA SE 6 is not present.
+                  <br>
+                  &ltkey&gtJVMCapabilities&lt/key&gt<br>
+                    &ltarray&gt<br>
+                            &ltstring&gtCommandLine&lt/string&gt<br>
+                            &ltstring&gtJNI&lt/string&gt<br>
+                            &ltstring&gtBundledApp&lt/string&gt<br>
+                            &ltstring&gtWebStart&lt/string&gt<br>
+                            &ltstring&gtApplets&lt/string&gt<br>
+                    &lt/array&gt<br>
                   </li>
-            </ol>
+                </ol>
+                <br>
+                Atleast one problem is solved, I am very happy, will take other problems one by one too.
+                <br>
             <br>
-          <br>
+
 
           Hoping for Best.<br>
           Happily Coding<br>
