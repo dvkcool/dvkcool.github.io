@@ -48,11 +48,27 @@
               <li> A Developer ID issued by Apple</li>
             </ol>
             <br>
+            <h3> Major Changes at a glance </h3>
+            <ol>
+              <li> All the compiled code is moved to Resources folder.(the script manages the work of moving files to correct places you don't need to worry.)</li>
+              <li> A new Info.plist file which is created according to the version number, I created a new Info.plist because the one available as a thirdparty was not in accordance with Apple Guidelines.<br>
+                It can be found here: <a href="https://github.com/dvkcool/scilabAppCreator/blob/master/etc/Info.plist">https://github.com/dvkcool/scilabAppCreator/blob/master/etc/Info.plist</a></li>
+              <li> Removal of checkmacosx.applescript, this file was an outdated apple script which creates error while codesigning. I did incorporate the applescript part in the scilab starter script using osascript - a modernly to use AppleScript features through shell script.:<br>
+                <b> Old method: </b><br>
+                <script src="https://gist.github.com/dvkcool/f49fd79bc6f68e2c54db1f079af5e4db.js"></script>
+                <br>
+                <b> New method: </b><br>
+                <script src="https://gist.github.com/dvkcool/50eb8ec1a2d93467fc414c193f1d5f44.js"></script>
+                <br>
+                The complete new starter script can be found here: <a href="https://github.com/dvkcool/scilabAppCreator/blob/master/etc/bin/scilab">https://github.com/dvkcool/scilabAppCreator/blob/master/etc/bin/scilab</a>
+              </li>
+            </ol>
+
             <h3> Procedure </h3>
             <ol>
               <li> Download my project from github using following command.<br>
                 git clone https://github.com/dvkcool/scilabAppCreator.git</li>
-              <li> Paste the scilab compiled files in the srcfiles folder of my project. </li>
+              <li> Paste the scilab compiled files in the src folder of my project. </li>
               <li> Run the main shell script, using sudo sh createApp.sh</li>
               <li> Answer the questions like build version and signing key.</li>
             </ol>
@@ -60,19 +76,20 @@
             You don't need to worry about anythig including the folder structure, the script takes care of everything and creates a nice Ready to Distribute dmg.
             <br><br>
             <h3> Video demo of the process</h3>
-            Here is a video which shows exactly how to do these steps.
+            Here is a video which shows exactly how to do these steps.<br>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/VjRfisq-1pA" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
             <br><br>
             <h3> Important points to be Noted </h3>
             <ol>
               <li> Be sure to backup your Developer ID certificate(because once it gets lost, it gets really troublesome to get a new one)</li>
               <li> Keep in mind to export your private keys (related to the certificate too).</li>
             </ol>
-            Here, a video of how to properly export and import your certificates.
+            Here, a video of how to properly export and import your certificates.<br>
             <iframe width="560" height="315" src="https://www.youtube.com/embed/iFgELNUxO5w" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
             <br>
             <br>
-
-            <br>
+            A compiled dmg for Scilab 6.0 can be found here: <a href="https://drive.google.com/open?id=1Gl4dRngHxGvSTOHOg_U8GX4yJlSu4LZU">https://drive.google.com/open?id=1Gl4dRngHxGvSTOHOg_U8GX4yJlSu4LZU</a>
+            <br><br>
             In case of any queries/doubts feel free to drop me a mail at divyanshukumarg@gmail.com
           <br>
           <br>
