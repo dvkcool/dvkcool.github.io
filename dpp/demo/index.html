@@ -1,0 +1,40 @@
+<html>
+<head>
+  <title> DPP Demo</title>
+  <script type="text/javascript">
+    function sendmsg(){
+      const ul = document.getElementById('txt').value; // Get the list where we will place our authors
+      if(ul.length<=0){
+      alert("Please enter a message");
+      }
+      else{
+        const url = 'http://2ce7b186.ngrok.io';
+        fetch(url, {
+          method: 'POST',
+          headers: {
+            Accept: 'application/json',
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            msg: ul
+          }),
+        }).then((rs) => {
+              console.log(rs);
+            })
+            .catch((error) => {
+              console.error(error);
+            });
+      }
+    }
+
+  </script>
+</head>
+<body>
+  <H1> Welcome</h1>
+    <p> Please enter your message to send</p>
+  <textarea name="txt" id ="txt" rows="8" cols="80"></textarea>
+  <br>
+  <button type="button" name="Send message" onclick="sendmsg()">
+    <p> Send message</p>
+  </button>
+</body>
